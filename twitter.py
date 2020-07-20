@@ -53,6 +53,7 @@ class TwitterAuthenticator():
 		auth.set_access_token(access_token,access_token_secret)
 		return auth
 
+##Twitter Streamer
 class TwitterStreamer():
 
 	#Class for streaming and processing live tweets
@@ -66,7 +67,7 @@ class TwitterStreamer():
 		stream = Stream(auth,listener)
 		stream.filter(track=hash_tag_list)
 
-
+## Twitter Listener
 class TwitterListener(StreamListener):
 	# This is just a tweet to print the received tweets in stdout.
 
@@ -92,6 +93,7 @@ class TwitterListener(StreamListener):
 
 		print(status)
 
+##Tweet Analyzer
 class TweetAnalyzer():
 	#Functionality of Analyzing and Categorizing content from tweets
 	def tweets_to_dataframe(self,tweets):
@@ -110,6 +112,7 @@ class TweetAnalyzer():
 
 		return df
 
+## Main
 if __name__ == '__main__':
 	twitter_client = TwitterClient()
 	api = twitter_client.get_twitter_client_api()
